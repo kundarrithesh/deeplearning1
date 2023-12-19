@@ -26,7 +26,7 @@ def train_mcculloch_pitts_neuron(inputs, target_output, weights, threshold1, lea
     print("\n")
 
 def step_function(x):
-    return 1 / (1 + np.exp(-x))
+    return 1 if x>=0.5 else 0
 
 
 # Inputs for the OR problem 
@@ -42,4 +42,4 @@ initial_weights = np.array([0, 0, 0, 0])
 x = 2.0
 
 # Training the McCulloch-Pitts Neuron for 4 epochs with a threshold of 0.5 and learning rate of 0.2 
-train_mcculloch_pitts_neuron(inputs, target_output, initial_weights, threshold1 = sigmoid_step_function(x) , learning_rate=0.2, epochs=8)
+train_mcculloch_pitts_neuron(inputs, target_output, initial_weights, threshold1 = sigmoid_step_function(x) , learning_rate=0.2, epochs=2)
